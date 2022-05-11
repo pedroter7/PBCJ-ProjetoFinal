@@ -6,7 +6,7 @@ public class ButtonManager : MonoBehaviour
 
     public void IniciaJogo()
     {
-        SceneManager.LoadScene("Lab5_RPG_Setup");
+        SceneManager.LoadScene("Fase1");
     }
 
     public void VaiParaCreditos()
