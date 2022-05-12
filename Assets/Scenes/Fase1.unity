@@ -4674,7 +4674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0243516, y: 1.652626, z: -10}
+  m_LocalPosition: {x: -2.893602, y: 1.657301, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4811,8 +4811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: -640.4965, y: -433.9641}
+  m_AnchoredPosition: {x: 0, y: -267.02002}
+  m_SizeDelta: {x: -732.0557, y: -534.0403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560185715
 MonoBehaviour:
@@ -4827,7 +4827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5550,8 +5550,8 @@ PrefabInstance:
       objectReference: {fileID: 1619122192}
     - target: {fileID: 4196446109459201237, guid: 93995d586832dbe43b19fa353bcd37a3, type: 3}
       propertyPath: DialogText
-      value: "Filho, estamos com dificuldades e preciso que voc\xEA v\xE1 atr\xE1s
-        de dinheiro para podermos jantar. Ajunte 10 moedas e ser\xE1 o suficiente
+      value: "M\xE3e: Filho, estamos com dificuldades e preciso que voc\xEA v\xE1
+        atr\xE1s de dinheiro para podermos jantar. Ajunte 10 moedas e ser\xE1 o suficiente
         para comprarmos um frango assado!"
       objectReference: {fileID: 0}
     - target: {fileID: 4196446109459201237, guid: 93995d586832dbe43b19fa353bcd37a3, type: 3}
