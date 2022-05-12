@@ -81,16 +81,19 @@ public class Player : Caractere
                     case Item.TipoItem.HEALTH:
                         DeveDesaparecer = AjusteDanoObjeto(danoObjeto.quantidade);
                         break;
-                    case Item.TipoItem.COLAR:
+                    case Item.TipoItem.MACA:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
                         break;
-                    case Item.TipoItem.CHAVE:
+                    case Item.TipoItem.COXA:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
                         break;
-                    case Item.TipoItem.PERGAMINHO:
+                    case Item.TipoItem.CARNE:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
                         break;
-                    case Item.TipoItem.TABUA:
+                    case Item.TipoItem.QUEIJO:
+                        DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        break;
+                    case Item.TipoItem.OVO:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
                         break;
                     case Item.TipoItem.POCAO_PODER:

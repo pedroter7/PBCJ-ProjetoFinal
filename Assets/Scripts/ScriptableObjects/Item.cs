@@ -18,10 +18,11 @@ public class Item : ScriptableObject
     {
         MOEDA, 
         HEALTH,
-        COLAR,
-        CHAVE,
-        PERGAMINHO,
-        TABUA,
+        MACA,
+        COXA,
+        CARNE,
+        QUEIJO,
+        OVO,
         POCAO_PODER
     }
 

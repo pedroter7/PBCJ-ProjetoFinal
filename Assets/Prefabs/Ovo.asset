@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a06e76ca10b710438aeb9bf65fa4c66, type: 3}
-  m_Name: Pergaminho
+  m_Name: Ovo
   m_EditorClassIdentifier: 
-  NomeObjeto: Pergaminho
-  sprite: {fileID: 2418888529867181687, guid: 496767c1a2caeff4089df6e9b4092f0e, type: 3}
+  NomeObjeto: Ovo
+  sprite: {fileID: 6943229999192725836, guid: 496767c1a2caeff4089df6e9b4092f0e, type: 3}
   quantidade: 1
   empilhavel: 1
-  tipoItem: 4
+  tipoItem: 6
