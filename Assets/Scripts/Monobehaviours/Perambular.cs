@@ -12,6 +12,8 @@ public class Perambular : MonoBehaviour
     public float VelocidadePerambular;                  // Velocidade do personagem NPC perambulando
     public float IntervaloMudancaDirecao;               // Intervalo para alterar a direcao do personagem NPC
     public bool PerseguePlayer;                         // Indica se o personagem NPC persegue o player
+    public bool InverteEscalaX;                         // Indica se a escala em X precisa ser invertida para mudar a direção do sprite
+    public int DirecaoSpriteX;                          // se < 0 a direcao original do sprite eh para esquerda se >= 0 para direita
     private float _velocidadeCorrente;                  // Velocidade atual do personagem NPC
     private Coroutine _moverCoroutine;
     private Rigidbody2D _rb2D;                          // Armazena o componente Rigidbody2D
@@ -20,6 +22,7 @@ public class Perambular : MonoBehaviour
     private Vector3 _posicaoFinal;
     private float _anguloAtual;                         // Angulo atribuido
     CircleCollider2D _circleCollider;                   // Armazena o componente de spot
+    private float _escalaOriginalX;                     // Armazena a escala do componente original em X
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +89,7 @@ public class Perambular : MonoBehaviour
             if (rbParaMover != null)
             {
                 _animator.SetBool("Caminhando", true);
+                InverteEscala();
                 Vector3 novaPosicao = Vector3.MoveTowards(rbParaMover.position, _posicaoFinal, velocidade * Time.deltaTime);
                 _rb2D.MovePosition(novaPosicao);
                 distanciaFaltante = (transform.position - _posicaoFinal).sqrMagnitude;
@@ -93,6 +97,42 @@ public class Perambular : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         _animator.SetBool("Caminhando", false);
+    }
+
+    // Inverter a escala para direcionar o sprite se necessario
+    private void InverteEscala()
+    {
+        if (InverteEscalaX)
+        {
+            if (_escalaOriginalX == 0)
+            {
+                _escalaOriginalX = transform.localScale.x;
+            }
+            Vector3 scaleChange = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            if (DirecaoSpriteX < 0)
+            {
+                if (transform.position.x < _posicaoFinal.x)
+                {
+                    scaleChange.x = _escalaOriginalX * (-1);
+                }
+                else
+                {
+                    scaleChange.x = _escalaOriginalX;
+                }
+            }
+            else
+            {
+                if (transform.position.x > _posicaoFinal.x)
+                {
+                    scaleChange.x = _escalaOriginalX * (-1);
+                }
+                else
+                {
+                    scaleChange.x = _escalaOriginalX;
+                }
+            }
+            transform.localScale = scaleChange;
+        }
     }
 
     //Trigger de colisao com o player para criar perseguicao.
