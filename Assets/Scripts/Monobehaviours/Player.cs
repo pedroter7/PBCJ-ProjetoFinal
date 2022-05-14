@@ -16,6 +16,12 @@ public class Player : Caractere
 
     private static bool _estaComBonus = false;  // Variavel para dar bonus ao player nas instanciacoes
 
+    // Controla a arma que o player esta usando
+    public static readonly string WEAPON_PLAYER_PREFS_KEY = "WEAPON_PLAYER";
+    public static readonly int WEAPON_PLAYER_ARMA = 0;
+    public static readonly int WEAPON_PLAYER_ESPADA = 1;
+    public static int WeaponAtual = -1; // Interface com outros scripts
+
     //Ao iniciar o player, configura seus componentes
     private void Start()
     {
@@ -24,6 +30,10 @@ public class Player : Caractere
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         if (_estaComBonus) BonusRecebido();
+        if (WeaponAtual == -1)
+        {
+            WeaponAtual = WEAPON_PLAYER_ARMA;
+        }
     }
 
     //Reseta o player, sua vida e seu inventario
@@ -101,12 +111,30 @@ public class Player : Caractere
                         _estaComBonus = true;
                         BonusRecebido();
                         break;
+                    case Item.TipoItem.ESPADA:
+                        DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        ColetaEspada();
+                        break;
+                    case Item.TipoItem.FRANGO_FINAL:
+                        DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        GameOver();
+                        break;
                     default:
                         break;
                 }
                 if (DeveDesaparecer) collision.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void GameOver()
+    {
+        SceneManager.LoadScene("TelaVitoria");
+    }
+
+    private void ColetaEspada()
+    {
+        WeaponAtual = WEAPON_PLAYER_ESPADA;
     }
 
     /// <summary>

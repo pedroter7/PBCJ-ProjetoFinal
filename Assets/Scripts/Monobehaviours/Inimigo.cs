@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class Inimigo : Caractere
 {
 
-    public bool bossFinal;
+    public bool bossFinal;      // Se o inimigo eh boss final
+    public GameObject ItemDropar;   // Um item para dropar na morte
 
     float pontosVida;   //Sa�de que o inimigo possui
     public int forcaDano; //A quantidade de dano que o inimigo causar�
@@ -56,10 +57,11 @@ public class Inimigo : Caractere
             pontosVida = pontosVida - dano;
             if (pontosVida <= float.Epsilon)
             {
+                var posicaoDropar = transform.position;
                 KillCaractere();
-                if (bossFinal)
+                if (ItemDropar != null)
                 {
-                    SceneManager.LoadScene("TelaVitoria");
+                    Instantiate(ItemDropar, posicaoDropar, Quaternion.identity);
                 }
                 break;
             }

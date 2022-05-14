@@ -23,7 +23,9 @@ public class Item : ScriptableObject
         CARNE,
         QUEIJO,
         OVO,
-        POCAO_PODER
+        POCAO_PODER,
+        ESPADA,
+        FRANGO_FINAL
     }
 
     public TipoItem tipoItem; //Armazena o tipo do do objeto script item

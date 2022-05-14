@@ -14,6 +14,11 @@ public class Municao : MonoBehaviour
         if (collider is BoxCollider2D)
         {
             Inimigo inimigo = collider.gameObject.GetComponent<Inimigo>();
+            // Caso atingido uma area vulneravel que eh um child gameobject do inimigo
+            if (inimigo == null)
+            {
+                inimigo = collider.gameObject.GetComponentInParent<Inimigo>();
+            }
             StartCoroutine(inimigo.DanoCaractere(DanoCausado, 0.0f));
             gameObject.SetActive(false);
         }

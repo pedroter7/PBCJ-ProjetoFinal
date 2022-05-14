@@ -10,19 +10,8 @@ public class MovimentaPlayer : MonoBehaviour
 
     Rigidbody2D rb2D; //Guarda o componente CorpoRigido do player.
     Animator animator; //Guarda o componente Animator do player
-    // string estadoAnimacao = "EstadoAnimacao"; //guarda o nome do parametro de animacao // Desnecessario com a blend tree
 
-
-    /*              // Desnecessario pela blend tree
-    enum EstadosCaractere
-    {
-        idle = 0,
-        andaLeste = 1,
-        andaOeste = 2,
-        andaNorte = 3,
-        andaSul = 4
-    }
-    */
+    private int _armaAtual = -1;     // Guarda a arma atual do player para controlar animacao
 
     // Start is called before the first frame update
     void Start()
@@ -64,34 +53,16 @@ public class MovimentaPlayer : MonoBehaviour
         }
         animator.SetFloat("DirX", Movimento.x);
         animator.SetFloat("DirY", Movimento.y);
+        if (Player.WeaponAtual != _armaAtual)
+        {
+            _armaAtual = Player.WeaponAtual;
+            MudarAnimArma();
+        }
     }
 
-    /*
-    private void UpdateEstado()
+    private void MudarAnimArma()
     {
-        
-        if (Movimento.x > 0)
-        {
-            animator.SetInteger(estadoAnimacao, (int)EstadosCaractere.andaLeste);
-        }
-        else if (Movimento.x < 0)
-        {
-            animator.SetInteger(estadoAnimacao, (int)EstadosCaractere.andaOeste);
-        }
-        else if (Movimento.y > 0)
-        {
-            animator.SetInteger(estadoAnimacao, (int)EstadosCaractere.andaNorte);
-        }
-        else if (Movimento.y < 0)
-        {
-            animator.SetInteger(estadoAnimacao, (int)EstadosCaractere.andaSul);
-        }
-        else
-        {
-            animator.SetInteger(estadoAnimacao, (int)EstadosCaractere.idle);
-        }
-        
+        animator.SetInteger("Weapon", _armaAtual);
     }
-    */
 
 }

@@ -13,8 +13,9 @@ public class Armas : MonoBehaviour
     private static List<GameObject> _municaoPool;   // Pool de municao
     public int TamanhoPool;                         // Tamanho do pool
     public float VelocidadeArma;                    // Velocidade da municao
+    public GameObject AreaMelee;                    // Area onde da dano quando a arma for melee
 
-    private bool _atirando;                         // Se a arma esta atirando
+    private bool _atacando;                         // Se a arma esta atirando
 
     [HideInInspector]
     public Animator animator;
@@ -51,7 +52,7 @@ public class Armas : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        _atirando = false;
+        _atacando = false;
         _cameraLocal = Camera.main;
         Vector2 abaixoEsquerda = _cameraLocal.ScreenToWorldPoint(new Vector2(0,0));
         Vector2 acimaDireita = _cameraLocal.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
@@ -109,7 +110,7 @@ public class Armas : MonoBehaviour
     //Atualiza o estado da animação da arma
     private void UpdateEstado()
     {
-        if (_atirando)
+        if (_atacando)
         {
             Vector2 vetorQuadrante;
             Quadrante quadrante = PegaQuadrante();
@@ -131,14 +132,14 @@ public class Armas : MonoBehaviour
                     vetorQuadrante = new Vector2(0.0f, 0.0f);
                     break;
             }
-            animator.SetBool("Atirando", true);
+            animator.SetBool("Atacando", true);
             animator.SetFloat("AtiraX", vetorQuadrante.x);
             animator.SetFloat("AtiraY", vetorQuadrante.y);
-            _atirando = false;
+            _atacando = false;
         } 
         else
         {
-            animator.SetBool("Atirando", false);
+            animator.SetBool("Atacando", false);
         }
     }
 
@@ -147,8 +148,11 @@ public class Armas : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _atirando = true;
-            DisparaMunicao();
+            _atacando = true;
+            if (Player.WeaponAtual == Player.WEAPON_PLAYER_ARMA)
+            {
+                DisparaMunicao();
+            }
         }
 
         UpdateEstado();

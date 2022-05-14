@@ -333,6 +333,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8360153532175118454, guid: bbd76c3f4e9a9ae4c90bb1c819adb7bb, type: 3}
+      propertyPath: PerseguePlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360153532175118454, guid: bbd76c3f4e9a9ae4c90bb1c819adb7bb, type: 3}
       propertyPath: VelocidadePerambular
       value: 0.5
       objectReference: {fileID: 0}
@@ -10215,3 +10219,60 @@ Transform:
   m_Father: {fileID: 273585806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3974516988592156461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.60720164
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268073, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974516989429268077, guid: 89da5327994744640b4188acbb8bac85, type: 3}
+      propertyPath: m_Name
+      value: EspadaColetavelO
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89da5327994744640b4188acbb8bac85, type: 3}
