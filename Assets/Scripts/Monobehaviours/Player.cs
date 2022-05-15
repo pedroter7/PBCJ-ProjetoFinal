@@ -26,7 +26,21 @@ public class Player : Caractere
     private void Start()
     {
         Inventario = Instantiate(inventarioPrefab);
-        pontosDano.valor = InicioPontosDano;
+
+        float saudePlayerPrefs = PlayerPrefs.GetFloat(ItemKeys.playerHealth);
+        string message = string.Format("Saude do prefs = " + saudePlayerPrefs);
+        print(message);
+        if(saudePlayerPrefs > 0)
+        {
+            string printMessage = string.Format("Saude inicial = " + saudePlayerPrefs);
+            print(printMessage);
+            pontosDano.valor = saudePlayerPrefs;
+        }
+        else
+        {
+            pontosDano.valor = InicioPontosDano;
+        }
+
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         if (_estaComBonus) BonusRecebido();
@@ -34,6 +48,12 @@ public class Player : Caractere
         {
             WeaponAtual = WEAPON_PLAYER_ARMA;
         }
+    }
+
+    public float GetHealth()
+    {
+        float value = pontosDano.valor;
+        return value;
     }
 
     //Reseta o player, sua vida e seu inventario
@@ -87,24 +107,54 @@ public class Player : Caractere
                 {
                     case Item.TipoItem.MOEDA:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerMoedas = PlayerPrefs.GetInt(ItemKeys.moeda);
+                            PlayerPrefs.SetInt(ItemKeys.moeda, playerMoedas + 1);
+                        }
                         break;
                     case Item.TipoItem.HEALTH:
                         DeveDesaparecer = AjusteDanoObjeto(danoObjeto.quantidade);
                         break;
                     case Item.TipoItem.MACA:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerMacas = PlayerPrefs.GetInt(ItemKeys.maca);
+                            PlayerPrefs.SetInt(ItemKeys.maca, playerMacas + 1);
+                        }
                         break;
                     case Item.TipoItem.COXA:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerCoxas = PlayerPrefs.GetInt(ItemKeys.coxa);
+                            PlayerPrefs.SetInt(ItemKeys.coxa, playerCoxas + 1);
+                        }
                         break;
                     case Item.TipoItem.CARNE:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerCarnes = PlayerPrefs.GetInt(ItemKeys.carne);
+                            PlayerPrefs.SetInt(ItemKeys.carne, playerCarnes + 1);
+                        }
                         break;
                     case Item.TipoItem.QUEIJO:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerQueijos = PlayerPrefs.GetInt(ItemKeys.queijo);
+                            PlayerPrefs.SetInt(ItemKeys.queijo, playerQueijos + 1);
+                        }
                         break;
                     case Item.TipoItem.OVO:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);
+                        if (DeveDesaparecer)
+                        {
+                            int playerOvos = PlayerPrefs.GetInt(ItemKeys.ovo);
+                            PlayerPrefs.SetInt(ItemKeys.ovo, playerOvos + 1);
+                        }
                         break;
                     case Item.TipoItem.POCAO_PODER:
                         DeveDesaparecer = Inventario.AddItem(danoObjeto);

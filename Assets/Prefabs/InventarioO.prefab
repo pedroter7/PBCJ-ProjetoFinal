@@ -175,4 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbf902126e5ac443b1e559a673139b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carneItem: {fileID: 11400000, guid: a6d7e9c7bac363a4bb666c6bc52556e6, type: 2}
+  moedaItem: {fileID: 11400000, guid: bff77b8234eaca84b9dc9b13bf332876, type: 2}
+  macaItem: {fileID: 11400000, guid: 3bcb1d7d1bbd34f448f27cd4067b9731, type: 2}
+  coxaItem: {fileID: 11400000, guid: 06a2e5201939fd140b248c7d68442569, type: 2}
+  queijoItem: {fileID: 11400000, guid: f8816346e3a69724fb2baa53c76cc63d, type: 2}
+  ovoItem: {fileID: 11400000, guid: 4af5a449e4ec27146b6725c6cb0dd199, type: 2}
   slotPrefab: {fileID: 109600791645071338, guid: ecef8b2519c0b7b40afe3219506c3325, type: 3}

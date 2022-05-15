@@ -1483,6 +1483,10 @@ PrefabInstance:
       propertyPath: prefabParaSpawn
       value: 
       objectReference: {fileID: 453998840719669162, guid: ad7b0bcfef510af4b81e960fb37c1a64, type: 3}
+    - target: {fileID: 5281353166729168676, guid: 6194d111a4ed2784d8a480b949c980f9, type: 3}
+      propertyPath: intervaloRepeticao
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6194d111a4ed2784d8a480b949c980f9, type: 3}
 --- !u!1 &2085461715

@@ -19,6 +19,10 @@ public class PontoSpawn : MonoBehaviour
         {
             InvokeRepeating("SpawnO", 0.0f, intervaloRepeticao);
         }
+        else if (intervaloRepeticao == 0)
+        {
+            SpawnO();
+        }
     }
 
     //Instancia o prefab no local marcado

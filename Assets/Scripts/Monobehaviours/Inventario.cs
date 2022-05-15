@@ -3,6 +3,14 @@ using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour
 {
+
+    public Item carneItem;
+    public Item moedaItem;
+    public Item macaItem;
+    public Item coxaItem;
+    public Item queijoItem;
+    public Item ovoItem;
+
     public GameObject slotPrefab;  //Objeto prefab do slot.
     public const int numSlot = 5; //Numero fixo de slots
     Image[] itemImages = new Image[numSlot]; //Array de imagens
@@ -14,12 +22,59 @@ public class Inventario : MonoBehaviour
     {
         Itens = new Item[numSlot];
         CriaSlots();
+        VerificaPrefs();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void VerificaPrefs()
+    {
+        int carne = PlayerPrefs.GetInt(ItemKeys.carne);
+        if (carne > 0)
+        {
+            carneItem.quantidade = carne;
+            AddItem(carneItem);
+        }
+
+        int moeda = PlayerPrefs.GetInt(ItemKeys.moeda);
+        if (moeda > 0)
+        {
+            print(moeda);
+            moedaItem.quantidade = moeda;
+            AddItem(moedaItem);
+        }
+
+        int coxa = PlayerPrefs.GetInt(ItemKeys.coxa);
+        if (coxa > 0)
+        {
+            coxaItem.quantidade = coxa;
+            AddItem(coxaItem);
+        }
+
+        int ovo = PlayerPrefs.GetInt(ItemKeys.ovo);
+        if (ovo > 0)
+        {
+            ovoItem.quantidade = ovo;
+            AddItem(ovoItem);
+        }
+
+        int maca = PlayerPrefs.GetInt(ItemKeys.maca);
+        if (maca > 0)
+        {
+            macaItem.quantidade = maca;
+            AddItem(macaItem);
+        }
+
+        int queijo = PlayerPrefs.GetInt(ItemKeys.queijo);
+        if (queijo > 0)
+        {
+            queijoItem.quantidade = queijo;
+            AddItem(queijoItem);
+        }
     }
 
     //Cria a quantidade certa de slots, de acordo com a variavel numSlot.

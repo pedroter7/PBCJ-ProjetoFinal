@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Controla o jogo, player, inimigos e qualquer caractere.
@@ -34,7 +33,22 @@ public class RPGGameManager : MonoBehaviour
     //Configura inicialmente a cena
     public void SetupScene()
     {
+        if (SceneManager.GetActiveScene().name.Equals("Fase1"))
+        {
+            ResetPlayerPrefs();
+        }
         SpawnPlayer();
+    }
+
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.SetInt(ItemKeys.moeda, 0);
+        PlayerPrefs.SetInt(ItemKeys.coxa, 0);
+        PlayerPrefs.SetInt(ItemKeys.carne, 0);
+        PlayerPrefs.SetInt(ItemKeys.ovo, 0);
+        PlayerPrefs.SetInt(ItemKeys.maca, 0);
+        PlayerPrefs.SetInt(ItemKeys.queijo, 0);
+        PlayerPrefs.SetFloat(ItemKeys.playerHealth, 0);
     }
 
     //Spawna o player na cena

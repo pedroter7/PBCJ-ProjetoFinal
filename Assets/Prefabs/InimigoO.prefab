@@ -150,6 +150,7 @@ MonoBehaviour:
   InicioPontosDano: 2
   MaxPontosDano: 2
   bossFinal: 0
+  ItemDropar: {fileID: 8932663483981643825, guid: 0581c7422de82364888312b3d1855a64, type: 3}
   forcaDano: 1
 --- !u!58 &6044110870872731900
 CircleCollider2D:
@@ -202,3 +203,5 @@ MonoBehaviour:
   VelocidadePerambular: 0.8
   IntervaloMudancaDirecao: 3
   PerseguePlayer: 1
+  InverteEscalaX: 0
+  DirecaoSpriteX: 0
